@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E-Commerce Checkout and Delivery Form</title>
+</head>
+<body>
+
+    <h1>Express Store — E-Commerce Checkout and Delivery</h1>
+    <p>
+        Thank you for shopping with us! Please review your selected items below and complete the delivery and payment information to place your order. All transactions are securely processed.
+    </p>
+
+    <p>
+        <img src="c:\Users\DHARA\OneDrive\Pictures\Screenshots\Screenshot 2026-08-31 230520.png" alt="Customer making an online payment for shopping items" title="Express Store Secure Checkout">
+    </p>
+
+    <p>
+        <a href="https://example.com/store" target="_blank" rel="noopener noreferrer" title="Return to store to browse more items">← Continue Shopping / Return to Store</a>
+    </p>
+
+    <h2>Order Summary</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Wireless Noise-Canceling Headphones</td>
+                <td>1</td>
+                <td>₹4,999.00</td>
+                <td>₹4,999.00</td>
+            </tr>
+            <tr>
+                <td>Ergonomic Laptop Stand</td>
+                <td>2</td>
+                <td>₹1,250.00</td>
+                <td>₹2,500.00</td>
+            </tr>
+            <tr>
+                <td>USB-C Fast Charging Cable (2m)</td>
+                <td>3</td>
+                <td>₹499.00</td>
+                <td>₹1,497.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3" align="right">Grand Total:</th>
+                <th>₹8,996.00</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <form action="https://example.com/place-order" method="post">
+
+        <h2>1. Customer Contact Details</h2>
+
+        <p>
+            <label for="custName">Full Name:</label><br>
+            <input type="text" id="custName" name="custName" placeholder="e.g. Priya Sharma" required minlength="3" maxlength="60" autocomplete="name">
+        </p>
+
+        <p>
+            <label for="custEmail">Email Address (for order receipt):</label><br>
+            <input type="email" id="custEmail" name="custEmail" placeholder="priya@example.com" required autocomplete="email">
+        </p>
+
+        <p>
+            <label for="custMobile">Mobile Contact Number (10 Digits):</label><br>
+            <input type="tel" id="custMobile" name="custMobile" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
+        </p>
+
+        <hr>
+
+        <h2>2. Delivery and Shipping Address</h2>
+
+        <p>
+            <label for="address">House No. / Building / Street Address:</label><br>
+            <input type="text" id="address" name="address" placeholder="Flat 4B, Sunrise Apartments, M.G. Road" required minlength="5" maxlength="120" autocomplete="street-address">
+        </p>
+
+        <p>
+            <label for="city">City / Town:</label><br>
+            <input type="text" id="city" name="city" placeholder="e.g. New Delhi" required minlength="2" maxlength="50" autocomplete="address-level2">
+        </p>
+
+        <p>
+            <label for="state">State / Province:</label><br>
+            <select id="state" name="state" required>
+                <option value="" selected disabled>-- Select State --</option>
+                <option value="DL">Delhi</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="KA">Karnataka</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="WB">West Bengal</option>
+                <option value="HR">Haryana</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="pincode">Postal / PIN Code (6 Digits):</label><br>
+            <input type="text" id="pincode" name="pincode" placeholder="110001" pattern="[0-9]{6}" maxlength="6" required autocomplete="postal-code">
+        </p>
+
+        <p>
+            <label for="country">Country:</label><br>
+            <select id="country" name="country" required>
+                <option value="" disabled>-- Select Country --</option>
+                <option value="IN" selected>India</option>
+                <option value="US">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="CA">Canada</option>
+                <option value="AU">Australia</option>
+            </select>
+        </p>
+
+        <p>
+            Delivery Speed and Type:<br>
+            <input type="radio" id="delStandard" name="deliveryMethod" value="standard" checked required>
+            <label for="delStandard">Standard Delivery (3-5 Business Days) — Free</label><br>
+
+            <input type="radio" id="delExpress" name="deliveryMethod" value="express">
+            <label for="delExpress">Express Delivery (1-2 Days) — ₹150</label><br>
+
+            <input type="radio" id="delSameDay" name="deliveryMethod" value="sameday">
+            <label for="delSameDay">Same Day Delivery — ₹299</label>
+        </p>
+
+        <p>
+            <label for="deliveryInstructions">Special Delivery Instructions / Gate Code (Optional):</label><br>
+            <textarea id="deliveryInstructions" name="deliveryInstructions" rows="3" cols="50" placeholder="e.g. Ring the doorbell twice or leave package with security guard..." maxlength="250"></textarea>
+        </p>
+
+        <hr>
+
+        <h2>3. Billing Address Option</h2>
+
+        <p>
+            <input type="checkbox" id="sameBilling" name="sameBilling" value="yes" checked>
+            <label for="sameBilling">Billing address is the same as my delivery address.</label>
+        </p>
+
+        <hr>
+
+        <h2>4. Payment Information and Offers</h2>
+
+        <p>
+            <label for="couponCode">Coupon / Promo Code (Optional):</label><br>
+            <input type="text" id="couponCode" name="couponCode" placeholder="e.g. SAVE10" pattern="[A-Z0-9]{4,10}" maxlength="10">
+        </p>
+
+        <p>
+            Select Payment Method:<br>
+            <input type="radio" id="payCard" name="paymentMethod" value="card" checked required>
+            <label for="payCard">Credit / Debit Card</label><br>
+
+            <input type="radio" id="payUpi" name="paymentMethod" value="upi">
+            <label for="payUpi">UPI / Online Net Banking</label><br>
+
+            <input type="radio" id="payCod" name="paymentMethod" value="cod">
+            <label for="payCod">Cash on Delivery (COD)</label>
+        </p>
+
+        <p>
+            <strong>Card Details (Required if paying by Card):</strong>
+        </p>
+
+        <p>
+            <label for="cardName">Cardholder Name:</label><br>
+            <input type="text" id="cardName" name="cardName" placeholder="Name as printed on card" minlength="3" maxlength="60" autocomplete="cc-name">
+        </p>
+
+        <p>
+            <label for="cardNumber">Card Number (16 Digits):</label><br>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234567890123456" pattern="[0-9]{16}" maxlength="16" autocomplete="cc-number">
+        </p>
+
+        <p>
+            <label for="cardExpiry">Card Expiry Date:</label><br>
+            <input type="month" id="cardExpiry" name="cardExpiry" min="2026-08">
+        </p>
+
+        <p>
+            <label for="cardCvv">CVV / Security Code (3 Digits):</label><br>
+            <input type="password" id="cardCvv" name="cardCvv" placeholder="123" pattern="[0-9]{3}" maxlength="3" autocomplete="cc-csc">
+        </p>
+
+        <hr>
+
+        <h2>5. Confirmation and Order Placement</h2>
+
+        <p>
+            <input type="checkbox" id="termsCheck" name="termsCheck" value="accepted" required>
+            <label for="termsCheck">I agree to the store terms and conditions and return policy.</label>
+        </p>
+
+        <p>
+            <input type="checkbox" id="orderConfirm" name="orderConfirm" value="confirmed" required>
+            <label for="orderConfirm">I confirm that all provided order and shipping details are accurate.</label>
+        </p>
+
+        <p>
+            <input type="submit" value="Place Order">
+            <input type="reset" value="Reset All Fields">
+        </p>
+
+    </form>
+
+</body>
+</html>

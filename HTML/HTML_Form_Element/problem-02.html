@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hospital / Clinic Appointment Booking Form</title>
+</head>
+<body>
+
+    <h1>CareFirst Multi-Specialty Clinic</h1>
+    <p>
+        Welcome to the CareFirst online appointment request portal. Please complete the form below to schedule a consultation with our specialist physicians. For urgent life-threatening medical emergencies, please do not use this form and contact our hotline immediately.
+    </p>
+
+    <p>
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80" alt="Modern clinic reception area and consultation rooms" title="CareFirst Clinic Entrance">
+    </p>
+
+    <p>
+        Emergency Contact: <a href="tel:+911205550199" title="Call CareFirst 24/7 Emergency Helpline">+91 120-5550199</a> | 
+        <a href="https://example.com/clinic-info" title="View Clinic Emergency Guidelines and Location">View Clinic Emergency Information</a>
+    </p>
+
+    <h2>Clinic Operating Timings</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Days</th>
+                <th>Working Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>General OPD and Consultations</td>
+                <td>Monday — Saturday</td>
+                <td>08:00 AM — 08:00 PM</td>
+            </tr>
+            <tr>
+                <td>Specialty Clinics</td>
+                <td>Monday — Friday</td>
+                <td>09:00 AM — 05:00 PM</td>
+            </tr>
+            <tr>
+                <td>Emergency Services</td>
+                <td>Monday — Sunday (Daily)</td>
+                <td>24 Hours Open</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <form action="https://example.com/submit-appointment" method="post">
+
+        <h2>1. Patient Information</h2>
+
+        <p>
+            <label for="patientName">Full Name of Patient:</label><br>
+            <input type="text" id="patientName" name="patientName" placeholder="e.g. Ananya Sharma" required minlength="3" maxlength="60" autocomplete="name">
+        </p>
+
+        <p>
+            <label for="patientEmail">Email Address:</label><br>
+            <input type="email" id="patientEmail" name="patientEmail" placeholder="patient@example.com" required autocomplete="email">
+        </p>
+
+        <p>
+            <label for="patientMobile">Mobile Contact Number (10 Digits):</label><br>
+            <input type="tel" id="patientMobile" name="patientMobile" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
+        </p>
+
+        <p>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" min="1920-01-01" max="2026-08-31" required>
+        </p>
+
+        <p>
+            <label for="patientId">Existing Patient ID (Optional - If previously registered):</label><br>
+            <input type="text" id="patientId" name="patientId" placeholder="e.g. CF-84920" pattern="[A-Z]{2}-[0-9]{5}" minlength="8" maxlength="8">
+        </p>
+
+        <hr>
+
+        <h2>2. Appointment Preferences</h2>
+
+        <p>
+            <label for="doctor">Select Specialist Doctor:</label><br>
+            <select id="doctor" name="doctor" required>
+                <option value="" selected disabled>-- Select Doctor and Specialty --</option>
+                <option value="dr-verma-cardiology">Dr. A. K. Verma — Cardiology</option>
+                <option value="dr-mehta-dermatology">Dr. Sneha Mehta — Dermatology</option>
+                <option value="dr-rao-pediatrics">Dr. R. N. Rao — Pediatrics</option>
+                <option value="dr-gupta-orthopedics">Dr. Vikram Gupta — Orthopedics</option>
+                <option value="dr-singh-neurology">Dr. Priya Singh — Neurology</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="appointmentDate">Preferred Appointment Date:</label><br>
+            <input type="date" id="appointmentDate" name="appointmentDate" min="2026-09-01" max="2026-12-31" required>
+        </p>
+
+        <p>
+            <label for="appointmentTime">Preferred Appointment Time Slot:</label><br>
+            <input type="time" id="appointmentTime" name="appointmentTime" min="08:00" max="19:30" required>
+        </p>
+
+        <p>
+            Visit Type:<br>
+            <input type="radio" id="visitNew" name="visitType" value="new-patient" checked required>
+            <label for="visitNew">New Patient Consultation</label><br>
+
+            <input type="radio" id="visitFollowup" name="visitType" value="follow-up">
+            <label for="visitFollowup">Follow-up Visit</label><br>
+
+            <input type="radio" id="visitRoutine" name="visitType" value="consultation">
+            <label for="visitRoutine">Routine Health Checkup</label><br>
+
+            <input type="radio" id="visitEmergency" name="visitType" value="emergency">
+            <label for="visitEmergency">Urgent/Emergency Visit</label>
+        </p>
+
+        <p>
+            Preferred Communication Method:<br>
+            <input type="radio" id="commEmail" name="preferredComm" value="email" checked required>
+            <label for="commEmail">Email Confirmation</label><br>
+
+            <input type="radio" id="commSms" name="preferredComm" value="sms">
+            <label for="commSms">SMS Text Message</label><br>
+
+            <input type="radio" id="commPhone" name="preferredComm" value="phone-call">
+            <label for="commPhone">Direct Phone Call</label>
+        </p>
+
+        <hr>
+
+        <h2>3. Visit Details and Additional Information</h2>
+
+        <p>
+            <label for="visitReason">Reason for Visit / Medical Symptoms:</label><br>
+            <textarea id="visitReason" name="visitReason" rows="5" cols="50" placeholder="Please describe your current symptoms, medical history, or specific concerns..." required minlength="10" maxlength="500"></textarea>
+        </p>
+
+        <hr>
+
+        <h2>4. Terms and Confirmation</h2>
+
+        <p>
+            <input type="checkbox" id="terms" name="terms" value="accepted" required>
+            <label for="terms">I agree to the appointment booking terms, clinic cancellation policy, and consent to medical evaluation.</label>
+        </p>
+
+        <p>
+            <input type="submit" value="Book Appointment">
+            <input type="reset" value="Reset Details">
+        </p>
+
+    </form>
+
+</body>
+</html>

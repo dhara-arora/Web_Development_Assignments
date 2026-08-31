@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>College Admission Application Form</title>
+</head>
+<body>
+
+    <h1>GLA University — Undergraduate Admission Application Form</h1>
+    <p>
+        Welcome to the official online admission portal for the 2026-2027 academic intake. Please complete all required personal details, academic background information, and program choices accurately before submitting your application.
+    </p>
+
+    <p>
+        <img src="c:\Users\DHARA\OneDrive\Pictures\Screenshots\Screenshot 2026-08-30 234415.png" title="GLA University Campus Life">
+    </p>
+
+    <p>
+        Need assistance with your application? <a href="https://www.gla.ac.in/admissions/eligibility-criteria" title="Visit the official GLA admissions guidelines page">Read Admissions Guidelines</a>
+    </p>
+
+    <hr>
+
+    <form action="https://example.com/submit-admission" method="post" enctype="multipart/form-data">
+
+        <h2>1. Personal Details</h2>
+
+        <p>
+            <label for="fullName">Full Name (as per Grade 10 Certificate):</label><br>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. Rahul Sharma" required minlength="3" maxlength="60" autocomplete="name">
+        </p>
+
+        <p>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" min="2000-01-01" max="2010-12-31" required>
+        </p>
+
+        <p>
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" placeholder="student@example.com" required autocomplete="email">
+        </p>
+
+        <p>
+            <label for="mobile">Mobile Number (10 Digits):</label><br>
+            <input type="tel" id="mobile" name="mobile" placeholder="9876543210" pattern="[0-9]{10}" required maxlength="10" autocomplete="tel">
+        </p>
+
+        <p>
+            <label for="appPin">Create Application Security PIN (4 Digits):</label><br>
+            <input type="password" id="appPin" name="appPin" placeholder="e.g. 4829" pattern="[0-9]{4}" minlength="4" maxlength="4" required>
+        </p>
+
+        <p>
+            Gender:<br>
+            <input type="radio" id="genderMale" name="gender" value="male" required>
+            <label for="genderMale">Male</label><br>
+
+            <input type="radio" id="genderFemale" name="gender" value="female">
+            <label for="genderFemale">Female</label><br>
+
+            <input type="radio" id="genderOther" name="gender" value="other">
+            <label for="genderOther">Other</label>
+        </p>
+
+        <p>
+            <label for="category">Category:</label><br>
+            <select id="category" name="category" required>
+                <option value="" selected disabled>-- Select Category --</option>
+                <option value="general">General</option>
+                <option value="obc">OBC (Other Backward Classes)</option>
+                <option value="sc">SC (Scheduled Caste)</option>
+                <option value="st">ST (Scheduled Tribe)</option>
+                <option value="ews">EWS (Economically Weaker Section)</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="address">Permanent Address:</label><br>
+            <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter house number, street name, city, state and pincode..." required minlength="15" maxlength="300"></textarea>
+        </p>
+
+        <hr>
+
+        <h2>2. Program and Course Selection</h2>
+
+        <p>
+            <label for="course">Select Target Program / Course:</label><br>
+            <select id="course" name="course" required>
+                <option value="" selected disabled>-- Choose a Program --</option>
+                <option value="bsc-maths">B.Sc. (Honours) Mathematics</option>
+                <option value="btech-cse">B.Tech. Computer Science Engineering</option>
+                <option value="btech-ai">B.Tech. Artificial Intelligence and Data Science</option>
+                <option value="bca">Bachelor of Computer Applications (BCA)</option>
+                <option value="bba">Bachelor of Business Administration (BBA)</option>
+                <option value="bsc-physics">B.Sc. (Honours) Physics</option>
+            </select>
+        </p>
+
+        <p>
+            Campus Preference (Single Choice):<br>
+            <input type="radio" id="campusGN" name="campusPreference" value="greater-noida" checked required>
+            <label for="campusGN">Greater Noida Campus</label><br>
+
+            <input type="radio" id="campusMathura" name="campusPreference" value="mathura">
+            <label for="campusMathura">Mathura Campus</label>
+        </p>
+
+        <p>
+            Extracurricular Interests (Multiple Selections Allowed):<br>
+            <input type="checkbox" id="clubCoding" name="clubs" value="coding-club">
+            <label for="clubCoding">Coding and Open Source Society</label><br>
+
+            <input type="checkbox" id="clubRobotics" name="clubs" value="robotics-club">
+            <label for="clubRobotics">Robotics and AI Lab</label><br>
+
+            <input type="checkbox" id="clubSports" name="clubs" value="sports-club">
+            <label for="clubSports">University Athletics and Sports</label><br>
+
+            <input type="checkbox" id="clubCultural" name="clubs" value="cultural-club">
+            <label for="clubCultural">Music and Drama Club</label>
+        </p>
+
+        <hr>
+
+        <h2>3. Previous Academic Qualification</h2>
+
+        <p>
+            <label for="qualification">Highest Qualification Completed:</label><br>
+            <select id="qualification" name="qualification" required>
+                <option value="" selected disabled>-- Select Qualification --</option>
+                <option value="12th-cbse">Class 12th (CBSE Board)</option>
+                <option value="12th-icse">Class 12th (ICSE Board)</option>
+                <option value="12th-state">Class 12th (State Board)</option>
+                <option value="diploma">3-Year Polytechnic Diploma</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="schoolName">School / Institute Name:</label><br>
+            <input type="text" id="schoolName" name="schoolName" placeholder="e.g. DPS Greater Noida" required minlength="5" maxlength="100">
+        </p>
+
+        <p>
+            <label for="passingYear">Year of Passing:</label><br>
+            <input type="number" id="passingYear" name="passingYear" min="2020" max="2026" step="1" placeholder="e.g. 2026" required>
+        </p>
+
+        <p>
+            <label for="percentage">Aggregate Marks Percentage / CGPA (%):</label><br>
+            <input type="number" id="percentage" name="percentage" min="40.00" max="100.00" step="0.01" placeholder="e.g. 88.50" required>
+        </p>
+
+        <p>
+            <label for="marksheet">Upload Class 12th Marksheet / Transcript (PDF/Image):</label><br>
+            <input type="file" id="marksheet" name="marksheet" accept=".pdf,.png,.jpg,.jpeg" required>
+        </p>
+
+        <hr>
+
+        <h2>4. Declaration and Submission</h2>
+
+        <p>
+            <input type="checkbox" id="declaration" name="declaration" value="accepted" required>
+            <label for="declaration">I hereby declare that all the information provided in this admission application is true, accurate, and complete to the best of my knowledge.</label>
+        </p>
+
+        <p>
+            <input type="submit" value="Submit Application">
+            <input type="reset" value="Reset Form">
+        </p>
+
+    </form>
+
+</body>
+</html>

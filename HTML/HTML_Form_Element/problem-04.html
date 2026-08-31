@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee Leave Request Form</title>
+</head>
+<body>
+
+    <h1>Enterprise Portal — Employee Leave Request</h1>
+    <p>
+        Please submit your leave application at least 3 business days in advance for planned absences. All requests are subject to approval by your direct department manager and HR.
+    </p>
+
+    <p>
+        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Modern corporate office desk setup" title="Enterprise HR Department">
+    </p>
+
+    <p>
+        <a href="https://example.com/leave-policy" target="_blank" rel="noopener noreferrer" title="Read the company leave guidelines and balance rules">View Corporate Leave Policy and Guidelines</a>
+    </p>
+
+    <h2>Leave Categories and Policy Summary</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Leave Type</th>
+                <th>Annual Quota</th>
+                <th>Notice Period Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Casual Leave (CL)</td>
+                <td>12 Days</td>
+                <td>1 Day Prior</td>
+            </tr>
+            <tr>
+                <td>Sick Leave (SL)</td>
+                <td>10 Days</td>
+                <td>Same Day (Medical Certificate required if > 2 days)</td>
+            </tr>
+            <tr>
+                <td>Earned / Paid Leave (EL)</td>
+                <td>15 Days</td>
+                <td>7 Days Prior</td>
+            </tr>
+            <tr>
+                <td>Work From Home (WFH)</td>
+                <td>24 Days</td>
+                <td>2 Days Prior</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <form action="https://example.com/submit-leave" method="post" enctype="multipart/form-data">
+
+        <h2>1. Employee Information</h2>
+
+        <p>
+            <label for="companyName">Organization:</label><br>
+            <input type="text" id="companyName" name="companyName" value="Global Tech Solutions Pvt Ltd" readonly>
+        </p>
+
+        <p>
+            <label for="empName">Employee Full Name:</label><br>
+            <input type="text" id="empName" name="empName" placeholder="e.g. Arisha Sharma" required minlength="3" maxlength="60" autocomplete="name">
+        </p>
+
+        <p>
+            <label for="empId">Employee ID (Format: EMP-XXXX):</label><br>
+            <input type="text" id="empId" name="empId" placeholder="e.g. EMP-4829" pattern="EMP-[0-9]{4}" required maxlength="8">
+        </p>
+
+        <p>
+            <label for="empEmail">Official Email Address:</label><br>
+            <input type="email" id="empEmail" name="empEmail" placeholder="employee@company.com" required autocomplete="email">
+        </p>
+
+        <p>
+            <label for="department">Department:</label><br>
+            <select id="department" name="department" required>
+                <option value="" selected disabled>-- Select Department --</option>
+                <option value="engineering">Software Engineering and IT</option>
+                <option value="hr">Human Resources (HR)</option>
+                <option value="finance">Finance and Accounting</option>
+                <option value="marketing">Marketing and Sales</option>
+                <option value="operations">Operations and Logistics</option>
+                <option value="research">Research and Development</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="approvalStatus">Initial Status:</label><br>
+            <input type="text" id="approvalStatus" name="approvalStatus" value="Pending Manager Approval" disabled>
+        </p>
+
+        <hr>
+
+        <h2>2. Leave Request Details</h2>
+
+        <p>
+            Leave Category:<br>
+            <input type="radio" id="leaveCasual" name="leaveCategory" value="casual-leave" checked required>
+            <label for="leaveCasual">Casual Leave</label><br>
+
+            <input type="radio" id="leaveSick" name="leaveCategory" value="sick-leave">
+            <label for="leaveSick">Sick Leave</label><br>
+
+            <input type="radio" id="leaveEarned" name="leaveCategory" value="earned-leave">
+            <label for="leaveEarned">Earned Leave</label><br>
+
+            <input type="radio" id="leaveWfh" name="leaveCategory" value="work-from-home">
+            <label for="leaveWfh">Work From Home (WFH)</label><br>
+
+            <input type="radio" id="leaveOther" name="leaveCategory" value="other">
+            <label for="leaveOther">Other Special Leave</label>
+        </p>
+
+        <p>
+            <label for="startDate">Leave Start Date:</label><br>
+            <input type="date" id="startDate" name="startDate" min="2026-09-01" max="2026-12-31" required>
+        </p>
+
+        <p>
+            <label for="endDate">Leave End Date:</label><br>
+            <input type="date" id="endDate" name="endDate" min="2026-09-01" max="2026-12-31" required>
+        </p>
+
+        <p>
+            <label for="totalDays">Total Number of Leave Days:</label><br>
+            <input type="number" id="totalDays" name="totalDays" min="0.5" max="30" step="0.5" value="1" required>
+        </p>
+
+        <p>
+            Reachable During Leave Period:<br>
+            <input type="radio" id="reachableYes" name="isReachable" value="yes" checked required>
+            <label for="reachableYes">Yes (Available via phone/email)</label><br>
+
+            <input type="radio" id="reachableNo" name="isReachable" value="no">
+            <label for="reachableNo">No (Out of reach / Full offline status)</label>
+        </p>
+
+        <p>
+            <label for="altContact">Alternate Emergency Contact Number (10 Digits):</label><br>
+            <input type="tel" id="altContact" name="altContact" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required>
+        </p>
+
+        <p>
+            <label for="leaveReason">Detailed Reason for Leave:</label><br>
+            <textarea id="leaveReason" name="leaveReason" rows="4" cols="50" placeholder="State the business or personal reason for your absence..." required minlength="10" maxlength="300"></textarea>
+        </p>
+
+        <p>
+            <label for="supportingDoc">Upload Supporting Document (Optional - e.g. Medical Certificate):</label><br>
+            <input type="file" id="supportingDoc" name="supportingDoc" accept=".pdf,.jpg,.jpeg,.png">
+        </p>
+
+        <hr>
+
+        <h2>3. Declaration and Submission</h2>
+
+        <p>
+            <input type="checkbox" id="declaration" name="declaration" value="accepted" required>
+            <label for="declaration">I confirm that my responsibilities have been handed over/notified to my team and that the information provided is accurate.</label>
+        </p>
+
+        <p>
+            <input type="submit" value="Submit Leave Request">
+            <input type="reset" value="Reset Form">
+        </p>
+
+    </form>
+
+</body>
+</html>

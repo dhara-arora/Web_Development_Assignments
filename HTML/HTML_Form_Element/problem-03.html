@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Course Enrollment and Student Registration</title>
+</head>
+<body>
+
+    <h1>Tech Academy — Student Registration and Course Enrollment</h1>
+    <p>
+        Welcome to Tech Academy's official registration portal. Complete the form below to enroll in your preferred technical specialization, set up your learning profile, and select your batch timings.
+    </p>
+
+    <p>
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Student working on programming code on a laptop keyboard" title="Technical Course Enrollment">
+    </p>
+
+    <p>
+        <a href="https://example.com/course-catalog" title="View full curriculum details and syllabus guide">View Full Course Syllabus and Prerequisites</a>
+    </p>
+
+    <hr>
+
+    <form action="https://example.com/submit-enrollment" method="post">
+
+        <h2>1. Account and Student Details</h2>
+
+        <p>
+            <label for="studentName">Full Name:</label><br>
+            <input type="text" id="studentName" name="studentName" placeholder="e.g. Shubh Sharma" required minlength="3" maxlength="60" autocomplete="name">
+        </p>
+
+        <p>
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" placeholder="student@example.com" required autocomplete="email">
+        </p>
+
+        <p>
+            <label for="password">Account Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Minimum 8 characters" minlength="8" maxlength="20" required autocomplete="new-password">
+        </p>
+
+        <p>
+            <label for="mobile">Mobile Number (10 Digits):</label><br>
+            <input type="tel" id="mobile" name="mobile" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
+        </p>
+
+        <p>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" min="1990-01-01" max="2012-12-31" required>
+        </p>
+
+        <hr>
+
+        <h2>2. Academic and Educational Background</h2>
+
+        <p>
+            <label for="educationLevel">Highest Level of Education:</label><br>
+            <select id="educationLevel" name="educationLevel" required>
+                <option value="" selected disabled>-- Select Education Level --</option>
+                <option value="high-school">High School (10+2)</option>
+                <option value="undergraduate">Undergraduate (B.Tech / B.Sc / BCA)</option>
+                <option value="postgraduate">Postgraduate (M.Tech / M.Sc / MCA)</option>
+                <option value="other">Other Professional Qualification</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="institution">College / Institution Name:</label><br>
+            <input type="text" id="institution" name="institution" placeholder="e.g. Delhi University" required minlength="3" maxlength="100">
+        </p>
+
+        <p>
+            <label for="currentYear">Current Academic Semester / Year:</label><br>
+            <select id="currentYear" name="currentYear" required>
+                <option value="" selected disabled>-- Select Year / Semester --</option>
+                <option value="1st-year">1st Year / Semesters 1-2</option>
+                <option value="2nd-year">2nd Year / Semesters 3-4</option>
+                <option value="3rd-year">3rd Year / Semesters 5-6</option>
+                <option value="4th-year">4th Year / Semesters 7-8</option>
+                <option value="graduated">Graduated / Working Professional</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="experienceYears">Prior Programming Experience (in Years):</label><br>
+            <input type="number" id="experienceYears" name="experienceYears" min="0" max="15" step="0.5" value="0" required>
+        </p>
+
+        <p>
+            <label for="githubUrl">GitHub Profile / Portfolio Web Address (URL):</label><br>
+            <input type="url" id="githubUrl" name="githubUrl" placeholder="https://github.com/yourusername" pattern="https://.*" required>
+        </p>
+
+        <hr>
+
+        <h2>3. Course Selection and Mode Preferences</h2>
+
+        <p>
+            <label for="courseSelect">Target Course Specialization:</label><br>
+            <select id="courseSelect" name="courseSelect" required>
+                <option value="" selected disabled>-- Choose a Technical Course --</option>
+                <option value="fullstack-web">Full Stack Web Development</option>
+                <option value="dsa-cpp">Data Structures and Algorithms in C++</option>
+                <option value="java-enterprise">Enterprise Java and Spring Boot</option>
+                <option value="python-data-science">Python for Data Science and AI</option>
+                <option value="database-sql">Database Systems and MySQL Engineering</option>
+                <option value="mobile-dev">Android App Development with Kotlin</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="batchSelect">Preferred Batch / Session Schedule:</label><br>
+            <select id="batchSelect" name="batchSelect" required>
+                <option value="" selected disabled>-- Select Batch Schedule --</option>
+                <option value="morning-weekday">Morning Regular (Mon-Fri, 08:00 AM - 10:00 AM)</option>
+                <option value="evening-weekday">Evening Regular (Mon-Fri, 06:00 PM - 08:00 PM)</option>
+                <option value="weekend-fasttrack">Weekend Fast-Track (Sat-Sun, 10:00 AM - 02:00 PM)</option>
+                <option value="self-paced">Self-Paced Flexible Access</option>
+            </select>
+        </p>
+
+        <p>
+            Learning Mode Preference:<br>
+            <input type="radio" id="modeOnline" name="learningMode" value="online" checked required>
+            <label for="modeOnline">Online (Live Interactive Sessions)</label><br>
+
+            <input type="radio" id="modeOffline" name="learningMode" value="offline">
+            <label for="modeOffline">Offline (On-Campus Classroom)</label><br>
+
+            <input type="radio" id="modeHybrid" name="learningMode" value="hybrid">
+            <label for="modeHybrid">Hybrid (Classroom + Remote Access)</label>
+        </p>
+
+        <p>
+            Technical Focus Areas / Interest Topics (Select all that apply):<br>
+            <input type="checkbox" id="areaJava" name="technicalAreas" value="java">
+            <label for="areaJava">Java Programming</label><br>
+
+            <input type="checkbox" id="areaPython" name="technicalAreas" value="python">
+            <label for="areaPython">Python Programming</label><br>
+
+            <input type="checkbox" id="areaWeb" name="technicalAreas" value="web-development">
+            <label for="areaWeb">Web Development (HTML/CSS/JS)</label><br>
+
+            <input type="checkbox" id="areaDsa" name="technicalAreas" value="data-structures">
+            <label for="areaDsa">Data Structures and Algorithms</label><br>
+
+            <input type="checkbox" id="areaDatabase" name="technicalAreas" value="database">
+            <label for="areaDatabase">Database Management and SQL</label>
+        </p>
+
+        <hr>
+
+        <h2>4. Learning Goals and Final Confirmation</h2>
+
+        <p>
+            <label for="learningGoals">What are your primary goals for enrolling in this course?</label><br>
+            <textarea id="learningGoals" name="learningGoals" rows="4" cols="50" placeholder="e.g. Prepare for university exams, build a personal project portfolio, or switch career fields..." required minlength="15" maxlength="400"></textarea>
+        </p>
+
+        <p>
+            <input type="checkbox" id="termsConfirmation" name="termsConfirmation" value="accepted" required>
+            <label for="termsConfirmation">I confirm that all provided registration details are correct and I agree to the platform code of conduct.</label>
+        </p>
+
+        <p>
+            <input type="submit" value="Register and Enroll">
+            <input type="reset" value="Clear Form">
+        </p>
+
+    </form>
+
+</body>
+</html>
